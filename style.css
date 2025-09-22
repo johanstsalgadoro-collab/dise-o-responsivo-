@@ -1,0 +1,101 @@
+/* Resetear márgenes, padding y establecer box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Hace que padding y border no afecten el tamaño total de los elementos */
+}
+
+/* Fondo azul para la página */
+body {
+    background-color: #003366; /* Color azul oscuro */
+}
+
+/* Menú de navegación que ocupe toda la pantalla */
+.menuCSS3 {
+    width: 100%; /* Asegura que el menú ocupe toda la anchura */
+    background-color: #F9B53C; /* Color de fondo */
+}
+
+/* Estilos para la lista principal */
+.menuCSS3 ul {
+    display: flex; /* Los elementos del menú estarán en fila (horizontal) */
+    justify-content: space-evenly; /* Distribuye los elementos uniformemente */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Elimina los puntos de la lista */
+}
+
+/* Estilos para los enlaces dentro del menú */
+.menuCSS3 a {
+    display: block; /* Hace que los enlaces ocupen todo el espacio del contenedor */
+    padding: 1em 2em; /* Ajuste de padding */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #191C26; /* Color del texto */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+/* Cambio de color al pasar el mouse */
+.menuCSS3 a:hover {
+    background-color: #CC673B; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para los elementos de la lista del menú */
+.menuCSS3 ul li {
+    position: relative; /* Necesario para los submenús */
+}
+
+/* Submenú (oculto por defecto) */
+.menuCSS3 ul li ul {
+    display: none; /* El submenú está oculto inicialmente */
+    position: absolute; /* Posiciona el submenú debajo del menú */
+    top: 100%;
+    left: 0;
+    list-style: none;
+    background-color: #F9B53C; /* Fondo del submenú */
+}
+
+/* Muestra el submenú cuando el mouse pasa por encima */
+.menuCSS3 ul li:hover ul {
+    display: block; /* Muestra el submenú */
+}
+
+/* Estilo para los enlaces dentro del submenú */
+.menuCSS3 ul li ul li a {
+    padding: 1em;
+}
+
+/* Media Queries para dispositivos pequeños (pantallas móviles y tabletas) */
+@media (max-width: 768px) {
+    /* Cambia el diseño a columna en lugar de fila */
+    .menuCSS3 ul {
+        flex-direction: column; /* Los elementos se apilan verticalmente */
+        width: 100%; /* Asegura que ocupe toda la pantalla */
+    }
+
+    /* Los submenús deben aparecer cuando se hace clic (o al pasar el mouse) */
+    .menuCSS3 ul li {
+        width: 100%; /* Asegura que los elementos de la lista ocupen toda la pantalla */
+    }
+
+    /* Cambiar el color de los enlaces al pasar el mouse */
+    .menuCSS3 a:hover {
+        background-color: #CC673B;
+    }
+
+    /* Submenú a pantalla completa */
+    .menuCSS3 ul li ul {
+        position: static; /* Cambia la posición a estática para que se despliegue en la misma fila */
+        display: none; /* Oculta el submenú por defecto */
+    }
+
+    /* Cuando se pasa el mouse sobre el elemento principal, se muestra el submenú */
+    .menuCSS3 ul li:hover ul {
+        display: block; /* Muestra el submenú */
+    }
+
+    /* Agregar un poco de espacio entre los elementos del menú */
+    .menuCSS3 a {
+        padding: 1em 1.5em; /* Ajuste el padding para un mejor espaciado */
+    }
+}
+
